@@ -1,7 +1,6 @@
 import streamlit as st
 import joblib
 import numpy as np
-from scipy.sparse import hstack
 
 st.set_page_config(
     page_title="AutoJudge",
@@ -19,12 +18,7 @@ def load_models():
 tfidf, scaler, reg = load_models()
 
 def combine_text(title, desc, inp, out):
-    return " ".join([
-        title,
-        desc,
-        inp,
-        out
-    ])
+    return " ".join([title, desc, inp, out])
 
 def count_symbols(text):
     symbols = ['+', '-', '*', '/', '=', '<', '>', '%']
@@ -40,54 +34,33 @@ def score_to_class(score):
 
 st.title("🧠 AutoJudge: Problem Difficulty Predictor")
 st.markdown("Predict programming problem difficulty using **text only**.")
-
 st.markdown("---")
 
 title = st.text_input("Problem Title")
-
-description = st.text_area(
-    "Problem Description",
-    height=200
-)
-
-input_desc = st.text_area(
-    "Input Description",
-    height=150
-)
-
-output_desc = st.text_area(
-    "Output Description",
-    height=150
-)
+description = st.text_area("Problem Description", height=200)
+input_desc = st.text_area("Input Description", height=150)
+output_desc = st.text_area("Output Description", height=150)
 
 if st.button("Predict Difficulty"):
 
     if description.strip() == "":
         st.warning("Please enter a problem description.")
     else:
-        full_text = combine_text(
-            title,
-            description,
-            input_desc,
-            output_desc
-        )
+        full_text = combine_text(title, description, input_desc, output_desc)
 
-        # TF-IDF
-        X_text = tfidf.transform([full_text])
+        # TF-IDF (dense)
+        X_text = tfidf.transform([full_text]).toarray()
 
         # Handcrafted features
         text_len = len(full_text)
         symbol_count = count_symbols(full_text)
-
         X_hand = scaler.transform([[text_len, symbol_count]])
 
         # Combine
-        X_final = hstack([X_text, X_hand])
+        X_final = np.hstack([X_text, X_hand])
 
-        # Predict score
-        score = reg.predict(X_final.toarray())[0]
-
-        # Class
+        # Predict
+        score = reg.predict(X_final)[0]
         difficulty = score_to_class(score)
 
         st.markdown("---")
@@ -99,5 +72,7 @@ if st.button("Predict Difficulty"):
             "⚠️ Prediction is based only on textual information. "
             "Actual difficulty may vary due to constraints and intended algorithms."
         )
+
+
 
 
