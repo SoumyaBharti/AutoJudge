@@ -3,6 +3,12 @@ import joblib
 import numpy as np
 from scipy.sparse import hstack
 
+st.set_page_config(
+    page_title="AutoJudge",
+    page_icon="🧠",
+    layout="centered"
+)
+
 @st.cache_resource
 def load_models():
     tfidf = joblib.load("tfidf.pkl")
@@ -93,3 +99,4 @@ if st.button("Predict Difficulty"):
             "⚠️ Prediction is based only on textual information. "
             "Actual difficulty may vary due to constraints and intended algorithms."
         )
+
