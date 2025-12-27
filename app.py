@@ -85,7 +85,7 @@ if st.button("Predict Difficulty"):
         X_final = hstack([X_text, X_hand])
 
         # Predict score
-        score = reg.predict(X_final)[0]
+        score = reg.predict(X_final.toarray())[0]
 
         # Class
         difficulty = score_to_class(score)
@@ -99,4 +99,5 @@ if st.button("Predict Difficulty"):
             "⚠️ Prediction is based only on textual information. "
             "Actual difficulty may vary due to constraints and intended algorithms."
         )
+
 
