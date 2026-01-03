@@ -92,3 +92,17 @@ Evaluation Results (Best Models)
       
       Classification	    Random Forest	~52% Accuracy
       Regression	        HistGradientBoosting	MAE ~1.65, RMSE ~2.0
+
+Web Interface
+
+    Built using Streamlit
+    
+    User inputs problem text
+    
+    Outputs:
+    
+        Difficulty score
+        
+        Difficulty class
+        
+    Runs locally, no deployment required
