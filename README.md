@@ -63,9 +63,10 @@ Approach
     Big-O notation detection
   
   3️ Models Used
+  
     Classification (Easy / Medium / Hard)
     
-      Logistic Regression
+          Logistic Regression
       
           Linear SVM
           
