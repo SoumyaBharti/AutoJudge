@@ -106,3 +106,31 @@ Web Interface
         Difficulty class
         
     Runs locally, no deployment required
+
+How to Run Locally
+
+    git clone https://github.com/your-username/AutoJudge.git
+    cd AutoJudge
+    pip install -r requirements.txt
+    streamlit run app.py
+
+Demo Video (2–3 minutes)
+
+    
+
+Saved Models
+
+    All trained models are saved in /models:
+    
+    best_classifier.pkl
+    
+    best_regressor.pkl
+    
+    tfidf.pkl
+    
+    scaler.pkl
+
+Conclusion
+
+    AutoJudge demonstrates how textual features alone can provide reasonable estimates of problem difficulty.
+    Future improvements include transformer-based embeddings and constraint-aware modeling.
