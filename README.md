@@ -67,27 +67,27 @@ Approach
     
       Logistic Regression
       
-      Linear SVM
-      
-      Random Forest (best performing)
-      
-      Histogram Gradient Boosting
-      
-      Metric: Accuracy, Precision, Recall, Confusion Matrix
-    
+          Linear SVM
+          
+          Random Forest (best performing)
+          
+          Histogram Gradient Boosting
+          
+          Metric: Accuracy, Precision, Recall, Confusion Matrix
+        
     Regression (Difficulty Score)
     
-      Histogram Gradient Boosting Regressor (best performing)
-      
-      Random Forest Regressor
-      
-      Gradient Boosting Regressor
-      
-      Ridge Regression
-      
-      Metric: MAE, RMSE, R² score
+          Histogram Gradient Boosting Regressor (best performing)
+          
+          Random Forest Regressor
+          
+          Gradient Boosting Regressor
+          
+          Ridge Regression
+          
+          Metric: MAE, RMSE, R² score
 
 Evaluation Results (Best Models)
-      Task	                  Model	Metric
+      
       Classification	    Random Forest	~52% Accuracy
       Regression	        HistGradientBoosting	MAE ~1.65, RMSE ~2.0
