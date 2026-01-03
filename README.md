@@ -1,4 +1,5 @@
 AutoJudge — Problem Difficulty Prediction System
+
 Author
 
     Soumya Bharti
@@ -86,7 +87,7 @@ Approach
       
       Metric: MAE, RMSE, R² score
 
-📈 Evaluation Results (Best Models)
+Evaluation Results (Best Models)
       Task	                  Model	Metric
       Classification	    Random Forest	~52% Accuracy
       Regression	        HistGradientBoosting	MAE ~1.65, RMSE ~2.0
