@@ -114,10 +114,10 @@ How to Run Locally
     pip install -r requirements.txt
     streamlit run app.py
 
-Demo Video (2–3 minutes)
+Demo Video 
 
+https://github.com/SoumyaBharti/AutoJudge/releases/tag/v1.0-demo
     
-
 Saved Models
 
     All trained models are saved in /models:
